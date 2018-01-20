@@ -1,16 +1,24 @@
 {
   "name": "react-c2c",
-  "version": "0.0.2",
-  "description": "Performant and lightweight copy to clipboard component for react based applications",
+  "version": "0.0.3",
+  "description": "Performant and comparitively light copy to clipboard component for react based applications",
   "main": "lib/index.js",
   "scripts": {
     "lib": "babel src/lib -d lib",
     "lib:watch": "babel src/lib -w -d lib",
     "docs": "webpack-dev-server",
     "docs:prod": "webpack -p",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "stats": "webpack -p --profile --json > stats.json"
   },
-  "keywords": ["react", "copy-to-clipboard", "c2c", "copy", "clipboard", "react-c2c"],
+  "keywords": [
+    "react",
+    "copy-to-clipboard",
+    "c2c",
+    "copy",
+    "clipboard",
+    "react-c2c"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.3.0 || ^16.2.0",
