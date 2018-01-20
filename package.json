@@ -1,0 +1,42 @@
+{
+  "name": "react-c2c",
+  "version": "0.1.3",
+  "description": "Performant and lightweight copy to clipboard component for react based applications",
+  "main": "lib/index.js",
+  "scripts": {
+    "lib": "babel src/lib -d lib",
+    "lib:watch": "babel src/lib -w -d lib",
+    "docs": "webpack-dev-server",
+    "docs:prod": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "keywords": ["react", "copy-to-clipboard", "c2c", "copy", "clipboard", "react-c2c"],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^15.3.0 || ^16.2.0",
+    "react-dom": "^15.3.0 || ^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.38",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "@babel/preset-react": "^7.0.0-beta.37",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.8",
+    "html-webpack-plugin": "^2.30.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "author": "solodynamo <bittuf3@gmail.com>",
+  "homepage": "https://github.com/solodynamo/react-c2c",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solodynamo/react-c2c.git"
+  }
+}
