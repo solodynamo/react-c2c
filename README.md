@@ -30,7 +30,7 @@ yarn add react-c2c
 ```
 
 ## Demo
-> Coming soon ..
+https://solodynamo.github.io/react-c2c/
 
 ## Usage
 ```js
