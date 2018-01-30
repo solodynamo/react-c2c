@@ -32,6 +32,8 @@ yarn add react-c2c
 ## Demo
 https://solodynamo.github.io/react-c2c/
 
+https://codesandbox.io/s/j314vk3r73
+
 ## Usage
 ```js
 import React from 'react';
