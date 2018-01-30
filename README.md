@@ -8,6 +8,11 @@
 
 > Performant and lightweight copy 2 clipboard component for react applications.
 
+##### Featured in:
+- [React Status](https://react.statuscode.com/issues/72)
+- [Hashbang Weekly](http://hashbangweekly.okgrow.com/2018/01/22/issue-52)
+- [Stackshare](https://stackshare.io/news/article/283641/performant-lightweight-and-dependency-free-react-copy-2-clipboard-component)
+
 ## Highlights
 
 - Can be easily integrated.
