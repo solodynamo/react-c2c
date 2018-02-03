@@ -3,18 +3,14 @@ import {C2C} from '../lib';
 
 
 export class App extends React.PureComponent {
-  state = {value: 'Hey! Try to copy me ', copied: false};
+  state = {value: 'Hey! Try to copy me '};
 
   onChange = ({target: {value}}) => {
-    this.setState({value, copied: false});
+    this.setState({value});
   };
 
   onClick = ({target: {innerHTML}}) => {
     console.log(`Clicked on "${innerHTML}"!`);
-  };
-
-  onCopy = (text, result) => {
-    this.setState({copied: true});
   };
 
   render() {
@@ -27,13 +23,17 @@ export class App extends React.PureComponent {
         </section>
 
         <section className="section">
-          <C2C onCopy={this.onCopy} text={this.state.value}>
-            <button>Copy to clipboard with button</button>
-          </C2C>
-        </section>
-
-        <section className="section">
-          {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+          <C2C text={this.state.value}>{({ copied, handleClick }) =>
+            copied
+              ? <span style={{color: 'red'}}>Copied.</span>
+              : <button
+                  onClick={e => {
+                    this.onClick(e);
+                    handleClick(e);
+                  }}>
+                    Copy to clipboard with button
+                </button>
+          }</C2C>
         </section>
 
         <section className="section">

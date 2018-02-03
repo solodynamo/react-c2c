@@ -51,7 +51,6 @@ class App extends React.Component {
         super(props);
         this.state = {
             value: '',
-            copied: false,
         }
     }
 
@@ -61,12 +60,16 @@ class App extends React.Component {
             <input value={this.state.value}
               onChange={({target: {value}}) => this.setState({value, copied: false})} />
 
-            <C2C text={this.state.value}
-              onCopy={() => this.setState({copied: true})}>
-              <button>Copy to clipboard with button</button>
-            </C2C>
+            <C2C
+              text={this.state.value}
+              render={({ copied, handleClick }) =>
+                copied
+                  ? <span style={{color: 'blue'}}>Copied !</span>
+                  : <button onClick={handleClick}>Copy to clipboard</button>
+              }
+            />
 
-            {this.state.copied ? <span style={{color: 'blue'}}>Copied !</span> : null}
+
           </div>
         );
     }
@@ -84,28 +87,31 @@ ReactDOM.render(<App />, container);
 Text to be copied to clipboard.
 
 
-#### `onCopy`: PropTypes.func
+#### `render`: PropTypes.func
 
-Optional callback, will be called when text is copied.
+[Render prop](https://reactjs.org/docs/render-props.html), pass a function that accepts an object with two keys, `handleClick` and `copied`.
 
-```
-onCopy(text, result)
-```
-`result (boolean)`: Returns `true` if copied successfully, else `false`.
+* `handleClick` should be called when you want copy event to be triggered. This should usually be assigned to an `onClick` event as browsers require user action for copy to work.
 
+* `copied` would be true in case of successful copying.
+
+#### `children`: PropTypes.func
+
+You can also use children as a function [pattern](https://discuss.reactjs.org/t/children-as-a-function-render-callbacks/626). The signature of this function is identical to that of render prop.
+
+**NOTE: Either one of `render` or `children` props is required and must be of type `function`.**
 
 #### `options`: PropTypes.shape({debug: bool})
 
 Flag that enables logs for debugging.
 
-#### `children`: PropTypes.node.isRequired
-
-C2C is a simple wrapping component,  so it requires a single child element to be present, which will be used to capture clicks.
 
 ```js
-<C2C text="Hi! 🌟 me">
-  <button>Copy 2 Clipboard</button>
-</C2C>
+<C2C text="Hi! 🌟 me">{({ copied, handleClick }) =>
+  copied
+    ? <span style={{color: 'blue'}}>Copied !</span>
+    : <button onClick={handleClick}>Copy to clipboard</button>
+}</C2C>
 ```
 
 ## Support react-c2c
