@@ -18,6 +18,7 @@
 - Can be easily integrated.
 - Just ~ **1.4kb**.
 - No dependencies.
+- Flexible (Uses render prop pattern)
 - Configurable for debugging(through logs).
 
 ## Comparison

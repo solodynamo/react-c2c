@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Performant and comparitively light copy to clipboard component for react based applications",
   "main": "lib/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "c2c",
     "copy",
     "clipboard",
+    "render props",
     "react-c2c"
   ],
   "license": "MIT",
