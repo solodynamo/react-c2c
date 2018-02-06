@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "name": "react-c2c",
   "description": "Performant and comparitively light copy to clipboard component for react based applications",
   "main": "lib/index.js",
   "scripts": {
